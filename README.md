@@ -1,1 +1,0 @@
-# Rilevazione-di-immagini-usando-la-tecnologia-YOLO
