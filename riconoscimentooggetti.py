@@ -6,9 +6,7 @@ import time
 # Carica il modello YOLO per il rilevamento degli oggetti
 model = YOLO("yolov8n.pt")
 
-camera = cv2.VideoCapture(0)
-camera.set(3, 1280)  # Larghezza
-camera.set(4, 720)  # Altezza
+
 
 # Lista delle classi di oggetti che il modello è in grado di rilevare
 class_names = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
@@ -26,7 +24,7 @@ scelta = input("Vuoi analizzare (1) un'immagine caricata da file o (2) tramite l
 
 if scelta == '1':
     # Carica l'immagine
-    image_path = r"C:\Users\Cristian\PycharmProjects\PythonProject\scuola\raybay-kG71BXh8KFw-unsplash-1024x806.jpg"  # Sostituisci con il percorso dell'immagine
+    image_path = r"animali.jpg"  # Sostituisci con il percorso dell'immagine
     image = cv2.imread(image_path)
 
     if image is None:
@@ -65,6 +63,10 @@ if scelta == '1':
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 elif scelta == '2':
+    camera = cv2.VideoCapture(0)
+    camera.set(3, 1280)  # Larghezza
+    camera.set(4, 720)  # Altezza
+
     # Variabili per il calcolo del frame rate (FPS)
     previous_frame_time = 0
 
